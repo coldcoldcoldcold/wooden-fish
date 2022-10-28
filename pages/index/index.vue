@@ -10,7 +10,7 @@
 				{{item}}
 			</view>
 		</view>
-		<image @click="woodFishHandle" class="wooden_fish" src="@/static/muyu.png" mode=""></image>
+		<image @click="woodFishHandle" :class="status === 1?'wooden_fish_act':''" class="wooden_fish" src="@/static/muyu.png" mode=""></image>
 		<view class="auto">
 			<button @click="auto" v-if="status === 0">自动功德</button>
 			<button @click="close" v-if="status === 1">关闭自动功德</button>
@@ -75,7 +75,7 @@
 </script>
 
 <style>
-	@keyframes fish-animation {
+	@keyframes text-animation {
 
 		from {
 			top: 0;
@@ -86,6 +86,17 @@
 			opacity: .0;
 		}
 
+	}
+	@keyframes fish-animation {
+	
+		from {
+			transform: scale(1);
+		}
+	
+		to {
+			transform: scale(1.2);
+		}
+	
 	}
 
 	page {
@@ -106,7 +117,9 @@
 		margin-left: -130rpx;
 		margin-top: -99.5rpx;
 	}
-
+	.wooden_fish_act{
+		animation: fish-animation linear  .1s infinite alternate;
+	}
 	.wooden_fish:active {
 		transform: scale(1.2);
 	}
@@ -122,7 +135,7 @@
 
 	.list-item {
 		position: absolute;
-		animation: fish-animation linear .5s forwards;
+		animation: text-animation linear .5s forwards;
 	}
 
 	.auto {
