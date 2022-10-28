@@ -10,7 +10,8 @@
 				{{item}}
 			</view>
 		</view>
-		<image @click="woodFishHandle" :class="status === 1?'wooden_fish_act':''" class="wooden_fish" src="@/static/muyu.png" mode=""></image>
+		<image @click="woodFishHandle" :class="status === 1?'wooden_fish_act':''" class="wooden_fish"
+			src="@/static/muyu.png" mode=""></image>
 		<view class="auto">
 			<button @click="auto" v-if="status === 0">自动功德</button>
 			<button @click="close" v-if="status === 1">关闭自动功德</button>
@@ -33,7 +34,7 @@
 				timer: null, //定时器
 				status: 0, //状态
 				show: false,
-				text:"功德 +1",
+				text: "功德 +1",
 			}
 		},
 		onLoad() {
@@ -87,16 +88,17 @@
 		}
 
 	}
+
 	@keyframes fish-animation {
-	
+
 		from {
 			transform: scale(1);
 		}
-	
+
 		to {
 			transform: scale(1.2);
 		}
-	
+
 	}
 
 	page {
@@ -117,9 +119,11 @@
 		margin-left: -130rpx;
 		margin-top: -99.5rpx;
 	}
-	.wooden_fish_act{
-		animation: fish-animation linear  .1s infinite alternate;
+
+	.wooden_fish_act {
+		animation: fish-animation linear .1s infinite alternate;
 	}
+
 	.wooden_fish:active {
 		transform: scale(1.2);
 	}
@@ -156,12 +160,14 @@
 		width: 50rpx;
 		height: 50rpx;
 	}
-	.setting-block{
+
+	.setting-block {
 		width: 500rpx;
 		padding: 20rpx;
 		box-sizing: border-box;
 	}
-	.inp{
+
+	.inp {
 		border: 1px solid #eee;
 		border-radius: 20rpx;
 		height: 72rpx;
